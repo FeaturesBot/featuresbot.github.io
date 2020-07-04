@@ -1,25 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Recipe from './Recipe';
+import Nav from './Nav';
 
-function App() {
+function App(){
+  useEffect(e =>{
+    console.log('hi');
+  }
+  );
+  const [recipes, setRecipes] = useState([{}]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Router>
+     <div>
+       <Nav/>
+       <Switch>
+         <Route path="/chicken">
+           <Recipe title="chicken" />
+
+          </Route>
+          <Route path="/app">
+           <App />
+           
+          </Route>
+       </Switch>
+     </div>
+   </Router>
   );
 }
 

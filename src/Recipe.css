@@ -1,0 +1,8 @@
+.recipe {
+    background-color: aqua ;
+    display: flex;
+    align-items: center;
+    border-radius: 10%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    animation: star duration timing-function delay iteration-count direction fill-mode;
+}
